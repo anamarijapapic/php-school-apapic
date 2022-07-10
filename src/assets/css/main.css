@@ -1,0 +1,22 @@
+
+body {
+	padding: 10px;
+}
+
+.c-chess-board {
+	border: 1px solid #000000;
+}
+
+.c-chess-board__cell {
+	border: none;
+	width: 30px;
+	height: 30px;
+}
+
+.c-chess-board__cell--light {
+	background-color: #ffffff;
+}
+
+.c-chess-board__cell--dark {
+	background-color: #000000;
+}

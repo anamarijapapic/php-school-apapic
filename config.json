@@ -1,0 +1,38 @@
+{
+  "devcert": {
+    "default": [
+      {
+        "domain": "php56.php-school.test",
+        "keyDestination": "docker/nginx/ssl/php56.php-school.test/key.pem",
+        "certDestination": "docker/nginx/ssl/php56.php-school.test/cert.pem",
+        "caDestination": "docker/php/5.6/certificate-authority/certificate.cert"
+      },
+      {
+        "domain": "php70.php-school.test",
+        "keyDestination": "docker/nginx/ssl/php70.php-school.test/key.pem",
+        "certDestination": "docker/nginx/ssl/php70.php-school.test/cert.pem",
+        "caDestination": "docker/php/7.0/certificate-authority/certificate.cert"
+      },
+      {
+        "domain": "php74.php-school.test",
+        "keyDestination": "docker/nginx/ssl/php74.php-school.test/key.pem",
+        "certDestination": "docker/nginx/ssl/php74.php-school.test/cert.pem",
+        "caDestination": "docker/php/7.4/certificate-authority/certificate.cert"
+      },
+      {
+        "domain": "php80.php-school.test",
+        "keyDestination": "docker/nginx/ssl/php80.php-school.test/key.pem",
+        "certDestination": "docker/nginx/ssl/php80.php-school.test/cert.pem",
+        "caDestination": "docker/php/8.0/certificate-authority/certificate.cert"
+      },
+      {
+        "domain": "php-school.test",
+        "keyDestination": "docker/nginx/ssl/php-school.test/key.pem",
+        "certDestination": "docker/nginx/ssl/php-school.test/cert.pem"
+      }
+    ]
+  },
+  "jobs": {
+    "devcert": ["devcert:default"]
+  }
+}

@@ -1,0 +1,17 @@
+.cvs
+.DS_Store
+.sass-cache
+.svn
+*.bak
+*.codekit
+*.codekit3
+*.log
+*.swp
+*.tmp
+*~
+/.env
+/.phpunit.result.cache
+/docker/data/
+/node_modules/
+/vendor/
+Thumbs.db

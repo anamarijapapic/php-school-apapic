@@ -1,0 +1,21 @@
+{
+  "name": "php-school",
+  "version": "0.1.0",
+  "description": "PHP School.",
+  "main": "index.js",
+  "scripts": {
+    "addcert": "node node_modules/@runforest/run/index.js devcert",
+    "test": "./vendor/bin/phpunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com:ilimic/php-school.git"
+  },
+  "author": "ivo@agilo.co",
+  "license": "ISC",
+  "homepage": "https://gitlab.com/ilimic/php-school",
+  "dependencies": {
+    "@runforest/devcert": "^1.0.0",
+    "@runforest/run": "^2.0.0"
+  }
+}

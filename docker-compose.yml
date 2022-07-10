@@ -1,0 +1,119 @@
+version: '3'
+services:
+  nginx:
+    build: ./docker/nginx/
+    ports:
+      - 80:80
+      - 443:443
+    links:
+      - php_56
+      # - php_70
+      # - php_74
+      - php_80
+    volumes:
+      - ./phpunit.xml:/var/www/phpunit.xml
+      - ./src:/var/www/src
+      - ./tests:/var/www/tests
+      - ./vendor:/var/www/vendor
+    container_name: php-school.test
+
+  php_56:
+    build: ./docker/php/5.6/
+    expose:
+      - 9000
+    environment:
+      DB_HOST: db
+      DB_NAME: ${MYSQL_DATABASE}
+      DB_USER: ${MYSQL_USER}
+      DB_PASS: ${MYSQL_PASSWORD}
+    links:
+      - db
+      - mailhog
+    volumes:
+      - ./phpunit.xml:/var/www/phpunit.xml
+      - ./src:/var/www/src
+      - ./tests:/var/www/tests
+      - ./vendor:/var/www/vendor
+
+  # php_70:
+  #   build: ./docker/php/7.0/
+  #   expose:
+  #     - 9000
+  #   environment:
+  #     DB_HOST: db
+  #     DB_NAME: ${MYSQL_DATABASE}
+  #     DB_USER: ${MYSQL_USER}
+  #     DB_PASS: ${MYSQL_PASSWORD}
+  #   links:
+  #     - db
+  #     - mailhog
+  #   volumes:
+  #     - ./phpunit.xml:/var/www/phpunit.xml
+  #     - ./src:/var/www/src
+  #     - ./tests:/var/www/tests
+  #     - ./vendor:/var/www/vendor
+
+  # php_74:
+  #   build: ./docker/php/7.4/
+  #   expose:
+  #     - 9000
+  #   environment:
+  #     DB_HOST: db
+  #     DB_NAME: ${MYSQL_DATABASE}
+  #     DB_USER: ${MYSQL_USER}
+  #     DB_PASS: ${MYSQL_PASSWORD}
+  #   links:
+  #     - db
+  #     - mailhog
+  #   volumes:
+  #     - ./phpunit.xml:/var/www/phpunit.xml
+  #     - ./src:/var/www/src
+  #     - ./tests:/var/www/tests
+  #     - ./vendor:/var/www/vendor
+
+  php_80:
+    build: ./docker/php/8.0/
+    expose:
+      - 9000
+    environment:
+      DB_HOST: db
+      DB_NAME: ${MYSQL_DATABASE}
+      DB_USER: ${MYSQL_USER}
+      DB_PASS: ${MYSQL_PASSWORD}
+    links:
+      - db
+      - mailhog
+    volumes:
+      - ./phpunit.xml:/var/www/phpunit.xml
+      - ./src:/var/www/src
+      - ./tests:/var/www/tests
+      - ./vendor:/var/www/vendor
+
+  db:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+      - ./db:/db-imports
+      - ./docker/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8080:80
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
