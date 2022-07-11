@@ -10,7 +10,22 @@
 	</head>
 	<body>
 
-		
+		<?php
+			function drawTriangle($size) {
+				for ($i = 0; $i < $size; $i++) {
+					for ($j = 0; $j <= $i; $j++)
+						echo "#";
+					echo "<br/>";
+				}
+			}
+
+			$size = (int) ($_GET["size"]);
+
+			if ($size > 4)
+				drawTriangle($size);
+			else 
+				echo "The minimum triangle size is 5, please enter a greater size.";
+		?>
 
 	</body>
 </html>

@@ -10,7 +10,15 @@
 	</head>
 	<body>
 
-		
+		<?php
+			function isOdd($num) {
+				return $num % 2;
+			}
+	
+			$number = (int) ($_GET["number"]);
+			
+			echo isOdd($number) ? "{$number} is an odd number." : "{$number} is an even number.";
+		?>
 
 	</body>
 </html>

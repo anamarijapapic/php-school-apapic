@@ -10,7 +10,18 @@
 	</head>
 	<body>
 
-		
+		<?php
+
+			$a = true;
+			$b = 1;
+			$c = 1.5;
+			$d = "Lorem ipsum";
+			$e = [1, 2, 3];
+			$f = new stdClass;
+			$g = null;
+
+			var_dump($a, $b, $c, $d, $e, $f, $g);
+		?>	
 
 	</body>
 </html>

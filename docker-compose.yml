@@ -28,7 +28,6 @@ services:
       DB_PASS: ${MYSQL_PASSWORD}
     links:
       - db
-      - mailhog
     volumes:
       - ./phpunit.xml:/var/www/phpunit.xml
       - ./src:/var/www/src
@@ -82,7 +81,6 @@ services:
       DB_PASS: ${MYSQL_PASSWORD}
     links:
       - db
-      - mailhog
     volumes:
       - ./phpunit.xml:/var/www/phpunit.xml
       - ./src:/var/www/src
@@ -90,7 +88,7 @@ services:
       - ./vendor:/var/www/vendor
 
   db:
-    image: mysql:5.7
+    image: mariadb:10.5.12
     ports:
       - 3306:3306
     volumes:
@@ -111,9 +109,3 @@ services:
       - db
     environment:
       PMA_HOST: db
-
-  mailhog:
-    image: mailhog/mailhog
-    ports:
-      - 1025:1025
-      - 8025:8025
