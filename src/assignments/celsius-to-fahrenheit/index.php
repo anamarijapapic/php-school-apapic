@@ -15,7 +15,13 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<?php
+			echo "-10 &deg;C is " . celsius_to_fahrenheit( -10 ) . " &deg;F</br>";
+			echo "0 &deg;C is " . celsius_to_fahrenheit( 0 ) . " &deg;F</br>";
+			echo "22.45 &deg;C is " . celsius_to_fahrenheit( 22.45 ) . " &deg;F</br>";
+			echo "22.455 &deg;C is " . celsius_to_fahrenheit( 22.455 ) . " &deg;F</br>";
+			echo "100 &deg;C is " . celsius_to_fahrenheit( 100 ) . " &deg;F</br>";			
+		?>	
 
 	</body>
 </html>

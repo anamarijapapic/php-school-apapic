@@ -15,7 +15,10 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<?php
+			for ($i = 1; $i <= 1000; $i++)
+				echo cardinal_to_ordinal($i) . "<br/>";
+		?>
 
 	</body>
 </html>

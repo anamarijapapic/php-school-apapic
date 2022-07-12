@@ -15,7 +15,13 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<?php
+			echo "0% = " . convert_to_decimal("0%") . "</br>";
+			echo "1% = " . convert_to_decimal("1%") . "</br>";
+			echo "1% = " . convert_to_decimal("2%") . "</br>";
+			echo "25% = " . convert_to_decimal("25%") . "</br>";
+			echo "100% = " . convert_to_decimal("100%") . "</br>";
+		?>
 
 	</body>
 </html>

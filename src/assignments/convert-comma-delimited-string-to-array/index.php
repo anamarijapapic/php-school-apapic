@@ -15,7 +15,13 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<?php
+			print_r(to_array(''));
+			echo "</br>";
+			print_r(to_array('foo'));
+			echo "</br>";
+			print_r(to_array('foo,bar,baz'));
+		?>
 
 	</body>
 </html>
