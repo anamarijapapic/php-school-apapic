@@ -15,7 +15,24 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<table class="table table-striped" style="width: 400px;">
+			<tr>
+				<th>Words</th>
+				<th>Longest Common Ending</th>
+			</tr>
+			<tr>
+				<td>cat, dog</td>
+				<td><?php echo longest_common_ending( 'cat', 'dog' ); ?></td>
+			</tr>
+			<tr>
+				<td>house, house</td>
+				<td><?php echo longest_common_ending( 'house', 'house' ); ?></td>
+			</tr>
+			<tr>
+				<td>sitting, standing</td>
+				<td><?php echo longest_common_ending( 'sitting', 'standing' ); ?></td>
+			</tr>
+		</table>
 
 	</body>
 </html>

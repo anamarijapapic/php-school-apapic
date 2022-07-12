@@ -15,7 +15,11 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<?php
+			echo longest_word('Lorem ipsum dolor sit amet') . "<br/>";
+			echo longest_word('Hello world') . "<br/>";
+			echo longest_word('');		
+		?>
 
 	</body>
 </html>

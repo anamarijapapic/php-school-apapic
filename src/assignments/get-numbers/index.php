@@ -15,7 +15,11 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<?php
+			print_r(get_numbers([]));
+			echo "</br>";
+			print_r(get_numbers([1, true, 2.5, 'foo', [], null, new stdClass]));			
+		?>
 
 	</body>
 </html>

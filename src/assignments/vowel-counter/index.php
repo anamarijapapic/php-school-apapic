@@ -15,7 +15,12 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<?php
+			echo count_vowels('') . "</br>";
+			echo count_vowels('php') . "</br>";
+			echo count_vowels('programming') . "</br>";
+			echo count_vowels('aeiou') . "</br>";		
+		?>
 
 	</body>
 </html>
