@@ -18,7 +18,13 @@ require __DIR__ . '/classes.php';
 
 <body>
 
-    
+    <?php
+        $animal = new Animal("tiger", "rawr");
+        $animal->give_kudos();
+        $animal->give_kudos();
+        $animal->give_kudos();
+        echo "Kudos: " . $animal->count_kudos() . "</br>";
+    ?>
 
 </body>
 

@@ -18,7 +18,11 @@ require __DIR__ . '/classes.php';
 
 <body>
 
-    
+    <?php
+        $animal = new Animal;
+        $animal->set_species("tiger");
+        print_r($animal);
+    ?>
 
 </body>
 

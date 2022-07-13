@@ -15,7 +15,14 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<?php
+			var_dump(is_valid_email( '' )); // return false
+			var_dump(is_valid_email( 'ivo' )); // return false
+			var_dump(is_valid_email( 'ivo@' )); // return false
+			var_dump(is_valid_email( 'ivo@agilo' )); // return false
+			var_dump(is_valid_email( 'ivo@agilo.' )); // return false
+			var_dump(is_valid_email( 'ivo@agilo.co' )); // return true			
+		?>
 
 	</body>
 </html>

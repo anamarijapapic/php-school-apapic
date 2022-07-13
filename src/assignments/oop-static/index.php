@@ -18,7 +18,10 @@ require __DIR__ . '/classes.php';
 
 <body>
 
-    
+    <?php
+        echo "Weight unit: ";
+        Animal::get_weight_unit();
+    ?>
 
 </body>
 

@@ -15,7 +15,14 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<?php
+			var_dump(is_valid_hex_code( '' )); // return false
+			var_dump(is_valid_hex_code( '#ffffff' )); // return true
+			var_dump(is_valid_hex_code( '#000000' )); // return true
+			var_dump(is_valid_hex_code( '#AbAbAb' )); // return true
+			var_dump(is_valid_hex_code( '#123456' )); // return true
+			var_dump(is_valid_hex_code( '#zzzzzz' )); // return false			
+		?>
 
 	</body>
 </html>

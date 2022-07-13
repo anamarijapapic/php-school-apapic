@@ -15,7 +15,11 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<?php
+			var_dump(has_friday_the_13th( 2022, 5 )); // return true
+			var_dump(has_friday_the_13th( 2022, 6 )); // return false
+			var_dump(has_friday_the_13th( 2022, 7 )); // return false			
+		?>
 
 	</body>
 </html>

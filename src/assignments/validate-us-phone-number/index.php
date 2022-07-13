@@ -15,7 +15,13 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<?php
+			var_dump(is_valid_phone_number( '' )); // return false
+			var_dump(is_valid_phone_number( '(123) 456-7890' )); // return true
+			var_dump(is_valid_phone_number( '(555) 555-5555' )); // return true
+			var_dump(is_valid_phone_number( '(555 ) 555-5555' )); // return false
+			var_dump(is_valid_phone_number( '(555) 555 - 5555' )); // return false			
+		?>
 
 	</body>
 </html>
